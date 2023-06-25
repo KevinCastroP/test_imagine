@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Package list</h1>
+
+  {% if packages %}
+    <ul>
+      {% for package in packages %}
+        <li>{{ package.nombre }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No packages found.</p>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Packages assigned to {{ carrier.nombre }}</h1>
+
+  {% if packages %}
+    <ul>
+      {% for package in packages %}
+        <li>
+          <strong>ID:</strong> {{ package.id }}<br>
+          <strong>Peso:</strong> {{ package.peso }}<br>
+          <strong>Dimensiones:</strong> {{ package.dimensiones }}<br>
+          <strong>Dirección de origen:</strong> {{ package.direccion_origen }}<br>
+          <strong>Dirección de destino:</strong> {{ package.direccion_destino }}<br>
+          <strong>Estado de entrega:</strong> {{ package.estado_entrega }}<br>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No packages assigned to this carrier were found.</p>
+  {% endif %}
+{% endblock %}
