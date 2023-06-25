@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Create new package</h1>
+
+  <form method="POST">
+    {% csrf_token %}
+
+    <label for="peso">Peso:</label>
+    <input type="number" name="peso" id="peso" required>
+
+    <label for="dimensiones">Dimensiones:</label>
+    <input type="text" name="dimensiones" id="dimensiones" required>
+
+    <label for="direccion_origen">Dirección de origen:</label>
+    <input type="text" name="direccion_origen" id="direccion_origen" required>
+
+    <label for="direccion_destino">Dirección de destino:</label>
+    <input type="text" name="direccion_destino" id="direccion_destino" required>
+
+    <label for="estado_entrega">Estado de entrega:</label>
+    <input type="text" name="estado_entrega" id="estado_entrega" required>
+
+    <button type="submit">Create package</button>
+  </form>
+{% endblock %}
